@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+## Rodar o Projeto
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+```bash
+Necessario ter o docker instalado na maquina 
+https://www.docker.com
 
-## Available Scripts
+$ docker-compose up 
 
-In the project directory, you can run:
+Caso erro de permissão, execute: chmod +x .docker/entrypoint.sh 
+```
 
-### `npm start`
+## DIGITAL REPUBLIC CODE CHALLENGE :computer:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## O que deve ser desenvolvido
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Uma aplicação web ou mobile que ajude o usuário a calcular a quantidade de tinta necessária para pintar uma sala.
+Essa aplicação deve considerar que a sala é composta de 4 paredes e deve permitir que o usuário escolha qual a medida de cada parede e quantas janelas e portas possuem cada parede.
+Com base na quantidade necessária o sistema deve apontar tamanhos de lata de tinta que o usuário deve comprar, sempre priorizando as latas maiores. Ex: se o usuário precisa de 19 litros, ele deve sugerir 1 lata de 18L + 2 latas de 0,5L
 
-### `npm test`
+### Regras de negócio
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Nenhuma parede pode ter menos de 1 metro quadrado nem mais de 15 metros quadrados, mas podem possuir alturas e larguras diferentes
+2. O total de área das portas e janelas deve ser no máximo 50% da área de parede
+3. A altura de paredes com porta deve ser, no mínimo, 30 centímetros maior que a altura da porta
+4. Cada janela possui as medidas: 2,00 x 1,20 mtos
+5. Cada porta possui as medidas: 0,80 x 1,90
+6. Cada litro de tinta é capaz de pintar 5 metros quadrados
+7. Não considerar teto nem piso.
+8. As variações de tamanho das latas de tinta são:
+   - 0,5 L
+   - 2,5 L
+   - 3,6 L
+   - 18 L
 
-### `npm run build`
+## Requistos técnicos
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Você é livre para utilizar qualquer linguagem ou framework que queira e os calculos podem ser resolvidos tanto no backend ou frontend.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Mesmo o teste sendo algo simples e que pode ser resolvido com poucas linhas de código, crie uma estrutura de arquivos como se fosse um projeto maior. A organização e componentização são extremamente importantes.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Torne o projeto fácil de ser executado (crie um passo a passo e/ou utilize docker).
 
-### `npm run eject`
+## O que será avaliado
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Qualidade do código
+- Baixo acoplamento
+- Componentização e reutilização de código
+- Versionamento correto
+- Escalabilidade
+- Testabilidade
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Dicas
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Prefira funções puras
+- Use gitflow e escreva comentários claros e objetivos em cada commit
+- O uso de eslint, editor config, docker, webpack, etc facilitam sua vida
+- Lembre-se do conceito de DRY e aplique
