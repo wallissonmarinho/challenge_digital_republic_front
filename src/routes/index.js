@@ -8,6 +8,7 @@ export default () => (
   <Suspense fallback={<div>carregando...</div>}>
     <Router>
       <Main path="/">
+        <Inicio path="/" />
       </Main>
     </Router>
   </Suspense>
